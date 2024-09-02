@@ -1,4 +1,4 @@
-function showHello()
+function f1()
 {
-    alert("Hello");
+    alert("f1");
 }
