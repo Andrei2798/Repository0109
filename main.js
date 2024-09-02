@@ -4,9 +4,9 @@ function isFillen(event) {
     let password = document.querySelector("#password").value;
 
     // Проверяем, введено ли "John" в поле name
-    if (name === "John") {
+    if (name === "John"||name=="" ) {
         event.preventDefault(); // Предотвращаем отправку формы
         document.querySelector("#message").style.color="red";
-       document.querySelector("#message").innerHTML="Name field cannot contain 'John'"
+       document.querySelector("#message").innerHTML="Name field cannot contain 'John' or be empty"
     }
 }
