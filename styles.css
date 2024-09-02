@@ -1,9 +1,31 @@
-h2
-{
-    width: 50%;
-    background-color: red;
+form{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: rgb(252, 252, 39);
+    justify-content: center; /* Центрирует содержимое формы горизонтально */
+    align-items:center;
+    gap: 15px;
 }
 
-button{
-    background-color: yellowgreen;
+.tittle
+{
+    display: flex;
+    justify-content: center; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+}
+
+input{
+    width: 75%;
+
+}
+
+.form-group
+{
+    display: flex;
+    flex-direction:column;
+    justify-content: center; 
+    align-items:center;
+
 }
