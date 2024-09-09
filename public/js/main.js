@@ -13,7 +13,7 @@ function isFillen(event) {
 
 
 // Число, которое нужно отправить на сервер
-const numberToSend = 42; // Можно указать любое число
+const numberToSend = 4; // Можно указать любое число
 
 async function sendNumber() {
     try {
