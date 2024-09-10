@@ -1,6 +1,9 @@
 const express = require ("express");
+const cors = require("cors");
 const app = express();
 const port = 3000;
+
+app.use(cors()); // Включаем CORS для всех доменов
 
 app.use((req, res, next) => {
     console.log(`\n--- ${req.url} Time: ${Date.now()} `);
