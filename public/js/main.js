@@ -18,7 +18,7 @@ const numberToSend = 8; // Можно указать любое число
 async function sendNumber() {
     try {
         // Отправляем POST-запрос на сервер
-        const response = await fetch('https://helloworld2344211222111.netlify.app/', {
+        const response = await fetch('/.netlify/functions/numberHandler', {
             method: 'POST', // Метод запроса
             headers: {
                 'Content-Type': 'application/json' // Устанавливаем тип контента JSON
