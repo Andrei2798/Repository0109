@@ -20,6 +20,10 @@ app.post('/number', (req, res) => {
   res.json({ number: number-1 }); // Отправляем это же число обратно
 });
 
+// app.listen(port, () => {
+//   console.log(`Server is running at http://localhost:${port}`);
+// });
+
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });

@@ -16,7 +16,7 @@ const numberToSend = 8;
 
 async function sendNumber() {
     try {
-        const response = await fetch('http://localhost:3000/number', { // Исправлено URL
+        const response = await fetch('https://repository0109-1.onrender.com/number', { // Исправлено URL
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
