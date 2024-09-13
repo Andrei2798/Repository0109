@@ -1,24 +1,17 @@
-const express = require ("express");
-const cors = require("cors");
+const express = require('express');
 const app = express();
-// const port = 3000;
-const port = process.env.PORT || 3000; // Используй PORT из окружения
+const port = process.env.PORT || 3000;
 
-app.use(cors()); // Включаем CORS для всех доменов
-
-app.use((req, res, next) => {
-    console.log(`\n--- ${req.url} Time: ${Date.now()} `);
-    next(); //передача управления следующей функции-middleware
-  });
-  
-  app.use(express.static(__dirname + "/public"));
-  
-  app.use(express.json()); //middleware для работы с body из fetch клиента
-
+app.use(express.static('public')); // Обслуживаем статические файлы из папки public
 
 app.post('/number', (req, res) => {
-  const number = req.body.number; // Получаем число из запроса
-  res.json({ number: number-1 }); // Отправляем это же число обратно
+  // Обработка POST-запроса
+  const number = req.body.number;
+  res.json({ number: number - 1 });
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
 // app.listen(port, () => {
