@@ -12,17 +12,27 @@ function isFillen(event) {
 }
 
 
-const numberToSend = 175;
-
 async function sendNumber() {
+    let numberToSend = document.getElementById("digitToSend").value;
+    // let numberToSend=55;
+    console.log(numberToSend);
+    console.log(typeof(numberToSend));
+    numberToSend = Number(numberToSend);
+    console.log(typeof(numberToSend));
+    // Проверяем, что значение не пустое
+    
     try {
-        const response = await fetch('/number', { // Исправлено URL
+        const response = await fetch('/number', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ number: numberToSend })
         });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
 
         const data = await response.json();
         console.log(`Server responded with: ${data.number}`);
