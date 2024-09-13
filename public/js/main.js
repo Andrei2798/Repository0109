@@ -13,28 +13,23 @@ function isFillen(event) {
 
 
 // Число, которое нужно отправить на сервер
-const numberToSend = 8; // Можно указать любое число
+const numberToSend = 8;
 
 async function sendNumber() {
     try {
-        // Отправляем POST-запрос на сервер
         const response = await fetch('/.netlify/functions/numberHandler', {
-            method: 'POST', // Метод запроса
+            method: 'POST',
             headers: {
-                'Content-Type': 'application/json' // Устанавливаем тип контента JSON
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ number: numberToSend }) // Преобразуем число в JSON и отправляем
+            body: JSON.stringify({ number: numberToSend })
         });
 
-        // Ожидаем ответ от сервера
         const data = await response.json();
-
-        // Выводим ответ от сервера в консоль
         console.log(`Server responded with: ${data.number}`);
     } catch (error) {
-        console.error('Error:', error); // В случае ошибки выводим ее в консоль
+        console.error('Error:', error);
     }
 }
 
-// Вызываем функцию отправки числа сразу после загрузки скрипта
-sendNumber();
+sendNumber()
