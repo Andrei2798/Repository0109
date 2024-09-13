@@ -1,7 +1,0 @@
-[build]
-  functions = "netlify/functions" # Указывает, где искать функции
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
