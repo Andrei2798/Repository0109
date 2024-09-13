@@ -12,12 +12,11 @@ function isFillen(event) {
 }
 
 
-// Число, которое нужно отправить на сервер
 const numberToSend = 8;
 
 async function sendNumber() {
     try {
-        const response = await fetch('/.netlify/functions/numberHandler', {
+        const response = await fetch('http://localhost:3000/number', { // Исправлено URL
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -32,4 +31,4 @@ async function sendNumber() {
     }
 }
 
-sendNumber()
+sendNumber();
