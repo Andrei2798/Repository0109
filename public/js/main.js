@@ -14,6 +14,11 @@ function isFillen(event) {
 
 async function sendNumber() {
     let numberToSend = document.getElementById("digitToSend").value;
+    if (isNaN(numberToSend) || numberToSend.trim() === "") {
+        document.querySelector("#digitMessage").style.color = "red";
+        document.querySelector("#digitMessage").innerHTML = "Please enter a valid number!";
+        return; // Останавливаем выполнение функции, если введено не число
+    }
     // let numberToSend=55;
     console.log(numberToSend);
     console.log(typeof(numberToSend));
@@ -35,7 +40,10 @@ async function sendNumber() {
         }
 
         const data = await response.json();
-        console.log(`Server responded with: ${data.number}`);
+        let newData = JSON.stringify(data);
+         
+        document.querySelector("#digitMessage").style.color="green";
+        document.querySelector("#digitMessage").innerHTML = `Response from server is ${data.number}`
     } catch (error) {
         console.error('Error:', error);
     }
