@@ -12,7 +12,7 @@ function isFillen(event) {
 }
 
 
-const numberToSend = 8;
+const numberToSend = 175;
 
 async function sendNumber() {
     try {

@@ -12,7 +12,7 @@ app.post('/number', (req, res) => {
     if (typeof number !== 'number') {
       throw new Error('Invalid input');
     }
-    res.json({ number: number - 1 });
+    res.json({ number: number - 3 });
   } catch (error) {
     console.error('Error in /number route:', error.message);
     res.status(400).json({ error: error.message });
